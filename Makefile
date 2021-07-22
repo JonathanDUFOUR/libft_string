@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/07/22 21:19:13 by jodufour         ###   ########.fr        #
+#    Updated: 2021/07/22 21:44:21 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,11 @@ OBJD			=	objs/
 SRCS			=	\
 					ft_split.c			\
 					ft_strcasecmp.c		\
-					ft_strcaseequ.c		\
 					ft_strcat.c			\
 					ft_strchr.c			\
 					ft_strcmp.c			\
 					ft_strcpy.c			\
 					ft_strdup.c			\
-					ft_strequ.c			\
 					ft_striter.c		\
 					ft_striteri.c		\
 					ft_strjoin.c		\
@@ -55,12 +53,10 @@ SRCS			=	\
 					ft_strmap.c			\
 					ft_strmapi.c		\
 					ft_strncasecmp.c	\
-					ft_strncaseequ.c	\
 					ft_strncat.c		\
 					ft_strncmp.c		\
 					ft_strncpy.c		\
 					ft_strndup.c		\
-					ft_strnequ.c		\
 					ft_strnstr.c		\
 					ft_strrchr.c		\
 					ft_strrev.c			\

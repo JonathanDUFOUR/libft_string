@@ -6,12 +6,11 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:28:03 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:26:08 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/07/22 21:47:20 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include <stdint.h>
 #include "ft_string.h"
 

@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 02:38:36 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:23:07 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/07/22 21:36:51 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
 #include <string.h>
+#include "typedefs/t_int.h"
 
 static int	ft_toupper(int c)
 {
@@ -26,5 +26,5 @@ int	ft_strncasecmp(char const *s1, char const *s2, size_t n)
 		++s2;
 		--n;
 	}
-	return (*(uint8_t *)s1 - *(uint8_t *)s2);
+	return (*(t_hhuint *)s1 - *(t_hhuint *)s2);
 }
