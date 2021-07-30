@@ -6,82 +6,82 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/07/30 03:23:48 by jodufour         ###   ########.fr        #
+#    Updated: 2021/07/30 03:27:38 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #######################################
 #               COMANDS               #
 #######################################
-CC				=	gcc -c -o
-LINK			=	ar rcs
-MKDIR			=	mkdir -p
-RM				=	rm -rf
+CC		=	gcc -c -o
+LINK	=	ar rcs
+MKDIR	=	mkdir -p
+RM		=	rm -rf
 
 #######################################
 #               LIBRARY               #
 #######################################
-NAME			=	libft_string
-NAME_A			=	${NAME}.a
-NAME_SO			=	${NAME}.so
+NAME	=	libft_string
+NAME_A	=	${NAME}.a
+NAME_SO	=	${NAME}.so
 
 #######################################
 #             DIRECTORIES             #
 #######################################
-INC_DIR			=	includes/
-SRC_DIR			=	srcs/
-OBJ_DIR			=	objs/
+INC_DIR	=	includes/
+SRC_DIR	=	srcs/
+OBJ_DIR	=	objs/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
-SRC				=	\
-					ft_split.c			\
-					ft_strcasecmp.c		\
-					ft_strcat.c			\
-					ft_strchr.c			\
-					ft_strcmp.c			\
-					ft_strcpy.c			\
-					ft_strdup.c			\
-					ft_striter.c		\
-					ft_striteri.c		\
-					ft_strjoin.c		\
-					ft_strlcat.c		\
-					ft_strlcpy.c		\
-					ft_strlen.c			\
-					ft_strlink.c		\
-					ft_strmap.c			\
-					ft_strmapi.c		\
-					ft_strncasecmp.c	\
-					ft_strncat.c		\
-					ft_strncmp.c		\
-					ft_strncpy.c		\
-					ft_strndup.c		\
-					ft_strnstr.c		\
-					ft_strrchr.c		\
-					ft_strrev.c			\
-					ft_strstr.c			\
-					ft_strtrim.c		\
-					ft_substr.c
+SRC		=	\
+			ft_split.c			\
+			ft_strcasecmp.c		\
+			ft_strcat.c			\
+			ft_strchr.c			\
+			ft_strcmp.c			\
+			ft_strcpy.c			\
+			ft_strdup.c			\
+			ft_striter.c		\
+			ft_striteri.c		\
+			ft_strjoin.c		\
+			ft_strlcat.c		\
+			ft_strlcpy.c		\
+			ft_strlen.c			\
+			ft_strlink.c		\
+			ft_strmap.c			\
+			ft_strmapi.c		\
+			ft_strncasecmp.c	\
+			ft_strncat.c		\
+			ft_strncmp.c		\
+			ft_strncpy.c		\
+			ft_strndup.c		\
+			ft_strnstr.c		\
+			ft_strrchr.c		\
+			ft_strrev.c			\
+			ft_strstr.c			\
+			ft_strtrim.c		\
+			ft_substr.c
 
 ######################################
 #            OBJECT FILES            #
 ######################################
-OBJ			=	${SRC:.c=.o}
-OBJ			:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+OBJ		=	${SRC:.c=.o}
+OBJ		:=	${addprefix ${OBJ_DIR}, ${OBJ}}
 
-DEP			=	${OBJ:.o=.d}
+DEP		=	${OBJ:.o=.d}
 
 #######################################
 #                FLAGS                #
 #######################################
-CFLAGS		=	-Wall -Wextra -MMD -I${INC_DIR}
+CFLAGS	=	-Wall -Wextra -MMD -I${INC_DIR}
 
 ifeq (DEBUG, true)
 	CFLAGS	+=	-g
 endif
 
-LDFLAGS		=	
+LDFLAGS	=	
 
 #######################################
 #                RULES                #
