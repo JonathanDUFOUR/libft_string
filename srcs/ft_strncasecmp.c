@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 02:38:36 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:36:51 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/08/18 02:36:35 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "typedefs/t_int.h"
+#include "type/t_int.h"
 
 static int	ft_toupper(int c)
 {

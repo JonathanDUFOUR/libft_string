@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 21:02:55 by jodufour          #+#    #+#             */
-/*   Updated: 2021/07/21 05:59:18 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/08/18 02:36:35 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string.h>
 # include <stdbool.h>
-# include "typedefs/t_int.h"
+# include "type/t_int.h"
 
 int		ft_strcasecmp(char const *s1, char const *s2);
 int		ft_strcmp(char const *s1, char const *s2);

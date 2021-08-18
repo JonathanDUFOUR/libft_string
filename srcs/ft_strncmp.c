@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 22:44:18 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:40:40 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/08/18 02:36:35 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "typedefs/t_int.h"
+#include "type/t_int.h"
 
 int	ft_strncmp(char const *s1, char const *s2, size_t n)
 {

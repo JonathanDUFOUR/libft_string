@@ -6,11 +6,11 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 03:09:10 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:32:19 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/08/18 02:36:35 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typedefs/t_int.h"
+#include "type/t_int.h"
 
 void	ft_striteri(char *s, void (*f)(t_uint, char *))
 {
