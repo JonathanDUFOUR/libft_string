@@ -6,14 +6,14 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/08/20 19:13:36 by jodufour         ###   ########.fr        #
+#    Updated: 2021/08/29 00:13:35 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #######################################
 #               COMANDS               #
 #######################################
-CC		=	gcc -c -o
+CC		=	clang -c -o
 LINK	=	ar rcs
 MKDIR	=	mkdir -p
 RM		=	rm -rf
@@ -28,9 +28,9 @@ NAME_SO	=	${NAME}.so
 #######################################
 #             DIRECTORIES             #
 #######################################
-INC_DIR	=	includes/
 SRC_DIR	=	srcs/
 OBJ_DIR	=	objs/
+INC_DIR	=	includes/
 
 ######################################
 #            SOURCE FILES            #
@@ -75,7 +75,9 @@ DEP		=	${OBJ:.o=.d}
 #######################################
 #                FLAGS                #
 #######################################
-CFLAGS	=	-Wall -Wextra -MMD -I${INC_DIR}
+CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	+=	-MMD -MP
+CFLAGS	+=	-I${INC_DIR}
 
 ifeq (${DEBUG}, true)
 	CFLAGS	+=	-g
@@ -91,7 +93,7 @@ ${NAME_A}:	${OBJ}
 
 ${NAME_SO}:	CFLAGS	+= -fPIC
 ${NAME_SO}:	LDFLAGS += -shared
-${NAME_SO}:	LINK = gcc -o
+${NAME_SO}:	LINK = clang -o
 ${NAME_SO}:	${OBJ}
 	${LINK} $@ ${LDFLAGS} $^
 
@@ -112,7 +114,7 @@ fclean:
 re:	fclean all
 
 norm:
-	@norminette ${SRC_DIR} | grep 'Error' ; true
+	@norminette ${SRC_DIR} ${INC_DIR} | grep 'Error' ; true
 
 coffee:
 	@echo '                                              '
