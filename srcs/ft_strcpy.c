@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:26:45 by jdufour           #+#    #+#             */
-/*   Updated: 2021/05/26 00:00:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:07:14 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	char	*p;
+	char	*ptr;
 
 	if (!dst || !src)
 		return (NULL);
-	p = dst;
+	ptr = dst;
 	while (*src)
-		*p++ = *src++;
-	*p = 0;
+		*ptr++ = *src++;
+	*ptr = 0;
 	return (dst);
 }

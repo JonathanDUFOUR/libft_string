@@ -6,13 +6,13 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 02:28:28 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/21 00:42:43 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:12:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, char const *src, size_t size)
 {
 	size_t	i;
 	size_t	dst_len;

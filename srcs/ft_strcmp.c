@@ -6,18 +6,18 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:26:33 by jdufour           #+#    #+#             */
-/*   Updated: 2021/08/18 02:36:35 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:06:34 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "type/t_int.h"
 
-int	ft_strcmp(char const *s1, char const *s2)
+int	ft_strcmp(char const *s0, char const *s1)
 {
-	while (s1 && s2 && *s1 && *(t_hhuint *)s1 == *(t_hhuint *)s2)
+	while (s0 && s1 && *s0 && *(t_hhuint *)s0 == *(t_hhuint *)s1)
 	{
+		++s0;
 		++s1;
-		++s2;
 	}
-	return (*(t_hhuint *)s1 - *(t_hhuint *)s2);
+	return (*(t_hhuint *)s0 - *(t_hhuint *)s1);
 }

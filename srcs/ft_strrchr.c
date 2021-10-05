@@ -6,24 +6,20 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 21:55:54 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/21 00:57:18 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 02:31:38 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(char const *str, int const c)
 {
-	char const	*p = s;
+	char const	*ptr = str;
 
-	if (!c)
-		return (((char *)s) + ft_strlen(s));
-	p += ft_strlen(s);
-	while (p >= s)
-	{
-		if (*p == (char)c)
-			return ((char *)p);
-		--p;
-	}
+	ptr += ft_strlen(str);
+	while (ptr >= str && *ptr != (char const)c)
+		--ptr;
+	if (*ptr == (char const)c)
+		return ((char *)ptr);
 	return (NULL);
 }

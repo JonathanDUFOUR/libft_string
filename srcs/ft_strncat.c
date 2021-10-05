@@ -6,21 +6,21 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 23:29:24 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/21 00:52:35 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:17:57 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncat(char *dst, const char *src, size_t n)
+char	*ft_strncat(char *dst, char const *src, size_t n)
 {
-	char	*p;
+	char	*ptr;
 
-	p = dst;
-	while (*p)
-		++p;
+	ptr = dst;
+	while (*ptr)
+		++ptr;
 	while (n-- && *src)
-		*p++ = *src++;
-	*p = 0;
+		*ptr++ = *src++;
+	*ptr = 0;
 	return (dst);
 }

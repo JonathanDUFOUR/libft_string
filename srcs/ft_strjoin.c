@@ -6,32 +6,32 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:36:45 by jonathan          #+#    #+#             */
-/*   Updated: 2021/07/21 00:40:39 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:12:13 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_string.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s0, char const *s1)
 {
-	char	*res;
-	char	*p;
+	char	*output;
+	char	*ptr;
+	size_t	len;
 
-	if (!s1 && !s2)
+	len = 0;
+	if (s0)
+		len = ft_strlen(s0);
+	if (s1)
+		len += ft_strlen(s1);
+	output = malloc((len + 1) * sizeof(char));
+	if (!output)
 		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	res = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!res)
-		return (NULL);
-	p = res;
-	while (*s1)
-		*p++ = *s1++;
-	while (*s2)
-		*p++ = *s2++;
-	*p = '\0';
-	return (res);
+	ptr = output;
+	while (s0 && *s0)
+		*ptr++ = *s0++;
+	while (s1 && *s1)
+		*ptr++ = *s1++;
+	*ptr = 0;
+	return (output);
 }

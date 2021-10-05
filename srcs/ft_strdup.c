@@ -6,28 +6,28 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:26:57 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/21 00:39:07 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:07:31 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_string.h"
 
-char	*ft_strdup(char const *s)
+char	*ft_strdup(char const *str)
 {
 	char	*output;
-	char	*p;
+	char	*ptr;
 	size_t	len;
 
-	if (!s)
+	if (!str)
 		return (NULL);
-	len = ft_strlen(s);
+	len = ft_strlen(str);
 	output = malloc((len + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
-	p = output;
-	while (*s)
-		*p++ = *s++;
-	*p = 0;
+	ptr = output;
+	while (*str)
+		*ptr++ = *str++;
+	*ptr = 0;
 	return (output);
 }

@@ -6,13 +6,13 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 03:09:10 by jdufour           #+#    #+#             */
-/*   Updated: 2021/05/26 00:04:21 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:08:14 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *str, void (*f)(char *))
 {
-	if (s && f)
-		while (*s)
-			f(s++);
+	if (str && f)
+		while (*str)
+			f(str++);
 }

@@ -6,13 +6,13 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 18:05:39 by jodufour          #+#    #+#             */
-/*   Updated: 2021/07/21 00:42:38 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:13:06 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, char const *src, size_t size)
 {
 	size_t	src_len;
 

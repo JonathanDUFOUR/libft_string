@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 23:11:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:27:10 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 02:36:37 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,31 @@ static void	*ft_memcpy(void *dst, void const *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strtrim(char const *s, char const *set)
+char	*ft_strtrim(char const *str, char const *set)
 {
 	char	*output;
 	size_t	o_len;
 
-	if (!s || !set)
+	if (!str || !set)
 		return (NULL);
-	o_len = ft_strlen(s);
-	while (*s && ft_strchr(set, *s))
+	o_len = ft_strlen(str);
+	while (*str && ft_strchr(set, *str))
 	{
 		--o_len;
-		++s;
+		++str;
 	}
-	if (!*s)
+	if (!*str)
 		return (ft_strdup(""));
-	s += o_len - 1;
-	while (*s && ft_strchr(set, *s))
+	str += o_len - 1;
+	while (*str && ft_strchr(set, *str))
 	{
 		--o_len;
-		--s;
+		--str;
 	}
-	s -= o_len - 1;
+	str -= o_len - 1;
 	output = malloc((o_len + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
 	*(output + o_len) = 0;
-	return (ft_memcpy(output, s, o_len));
+	return (ft_memcpy(output, str, o_len));
 }

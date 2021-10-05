@@ -6,22 +6,22 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 03:09:10 by jdufour           #+#    #+#             */
-/*   Updated: 2021/08/18 02:36:35 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:08:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "type/t_int.h"
 
-void	ft_striteri(char *s, void (*f)(t_uint, char *))
+void	ft_striteri(char *str, void (*f)(t_uint, char *))
 {
-	register char const	*p = s;
+	register char const	*ptr = str;
 
-	if (s && f)
+	if (str && f)
 	{
-		while (s && *s)
+		while (str && *str)
 		{
-			f(s - p, s);
-			++s;
+			f(str - ptr, str);
+			++str;
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:27:46 by jdufour           #+#    #+#             */
-/*   Updated: 2021/07/22 21:19:39 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/10/05 01:01:52 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	**populate(char **output, char *ptr, char const *s, char c)
 	return (output);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**output;
 	size_t	size;
@@ -38,11 +38,11 @@ char	**ft_split(char const *s, char c)
 
 	size = 0;
 	len = 0;
-	while (*s && *s == c)
-		++s;
-	while (s[len])
+	while (*str && *str == c)
+		++str;
+	while (str[len])
 	{
-		if (s[len] != c && (!len || s[len - 1] == c))
+		if (str[len] != c && (!len || str[len - 1] == c))
 			++size;
 		++len;
 	}
@@ -50,5 +50,5 @@ char	**ft_split(char const *s, char c)
 	if (!output)
 		return (NULL);
 	output[size] = NULL;
-	return (populate(output, (char *)(output + size + 1), s, c));
+	return (populate(output, (char *)(output + size + 1), str, c));
 }
