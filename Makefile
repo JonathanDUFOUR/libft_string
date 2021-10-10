@@ -79,7 +79,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 CFLAGS	+=	-MMD -MP
 CFLAGS	+=	-I${INC_DIR}
 
-ifeq (${DEBUG}, true)
+ifeq (${DEBUG}, 1)
 	CFLAGS	+=	-g
 endif
 
