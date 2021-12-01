@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:28:03 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 02:35:16 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:59:19 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strstr(char const *str, char const *tf)
 	size_t			i;
 
 	i = 0;
-	if (!str || !tf || tf_l > s_l || !tf_l)
+	if (tf_l > s_l || !tf_l)
 		return ((char *)(!tf_l * (uintptr_t)str));
 	while (i < 256)
 		tab[i++] = tf_l;

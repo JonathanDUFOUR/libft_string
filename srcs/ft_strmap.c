@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 17:47:35 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 01:16:14 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:57:29 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strmap(char const *str, char (*f)(char))
 	char	*map;
 	char	*ptr;
 
-	if (!str || !f)
-		return (NULL);
 	map = ft_strdup(str);
 	if (!map)
 		return (NULL);

@@ -6,23 +6,23 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 20:52:02 by jodufour          #+#    #+#             */
-/*   Updated: 2021/07/30 03:24:37 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:54:02 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef T_INT_H
 # define T_INT_H
 
-typedef char					t_hhint;
-typedef short int				t_hint;
-typedef int						t_int;
-typedef long int				t_lint;
-typedef long long int			t_llint;
+typedef signed char			t_hhint;
+typedef signed short		t_hint;
+typedef signed int			t_int;
+typedef signed long			t_lint;
+typedef signed long long	t_llint;
 
-typedef unsigned char			t_hhuint;
-typedef unsigned short int		t_huint;
-typedef unsigned int			t_uint;
-typedef unsigned long int		t_luint;
-typedef unsigned long long int	t_lluint;
+typedef unsigned char		t_hhuint;
+typedef unsigned short		t_huint;
+typedef unsigned int		t_uint;
+typedef unsigned long 		t_luint;
+typedef unsigned long long	t_lluint;
 
 #endif

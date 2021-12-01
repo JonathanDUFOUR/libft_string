@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/08/29 00:13:35 by jodufour         ###   ########.fr        #
+#    Updated: 2021/12/01 17:41:21 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ NAME_SO	=	${NAME}.so
 #######################################
 SRC_DIR	=	srcs/
 OBJ_DIR	=	objs/
-INC_DIR	=	includes/
+INC_DIR	=	include/
 
 ######################################
 #            SOURCE FILES            #

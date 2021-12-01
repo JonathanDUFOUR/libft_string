@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 22:11:06 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 02:25:44 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:58:47 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strnstr(char const *str, const char *tf, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if (!str || !tf)
-		return (NULL);
 	len = ft_strlen(str);
 	n = (len < n) * len + (len >= n) * n;
 	len = ft_strlen(tf);

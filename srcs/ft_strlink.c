@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 21:39:40 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 01:15:11 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:57:14 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ char	*ft_strlink(char const **strs, char const *link)
 	size_t		o_len;
 	size_t		l_len;
 
-	if (!strs || !link)
-		return (NULL);
 	if (!*strs || !*(strs + 1))
 		return ((char *)*strs);
 	l_len = ft_strlen(link);

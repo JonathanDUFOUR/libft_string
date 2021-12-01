@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 22:41:53 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 02:33:40 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:59:03 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrev(char *str)
 	char	*ptr0;
 	char	*ptr1;
 
-	if (!str || !*str || !*(str + 1))
+	if (!*str || !*(str + 1))
 		return (str);
 	ptr0 = str;
 	ptr1 = str + ft_strlen(str) - 1;

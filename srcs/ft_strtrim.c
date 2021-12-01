@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 23:11:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 02:36:37 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:59:40 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ char	*ft_strtrim(char const *str, char const *set)
 	char	*output;
 	size_t	o_len;
 
-	if (!str || !set)
-		return (NULL);
 	o_len = ft_strlen(str);
 	while (*str && ft_strchr(set, *str))
 	{
