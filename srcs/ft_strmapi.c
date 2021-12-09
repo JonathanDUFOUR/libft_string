@@ -6,14 +6,20 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 19:29:08 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/01 17:57:38 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:04:12 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_string.h"
 
-char	*ft_strmapi(char const *str, char (*f)(t_uint, char))
+/*
+	Allocate a new string, copy the content of the given string `str` to it,
+	and apply the function `fct` to each character of the new string
+	Return the address of the new string
+	Return NULL upon failure
+*/
+char	*ft_strmapi(char const *str, char (*fct)(t_uint, char))
 {
 	char	*map;
 	char	*ptr;
@@ -24,7 +30,7 @@ char	*ft_strmapi(char const *str, char (*f)(t_uint, char))
 	ptr = map;
 	while (*str)
 	{
-		*ptr = (*f)((ptr - map), *str++);
+		*ptr = (*fct)((ptr - map), *str++);
 		++ptr;
 	}
 	*ptr = 0;

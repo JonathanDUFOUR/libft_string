@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 22:41:53 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/01 17:59:03 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:40:01 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ static void	char_swap(char *c1, char *c2)
 	*c1 ^= *c2;
 }
 
+/*
+	Reverse the whole content of the given string `str`
+	Return the address of the given string `str`
+*/
 char	*ft_strrev(char *str)
 {
 	char	*ptr0;

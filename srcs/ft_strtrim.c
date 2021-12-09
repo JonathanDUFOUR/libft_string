@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 23:11:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/01 17:59:40 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:48:33 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ static void	*ft_memcpy(void *dst, void const *src, size_t n)
 	return (dst);
 }
 
+/*
+	Allocate a new string and copy the content of the given string `str` to it
+	except the first/last characters that are found in the given string `set`
+	Return the address of the new string
+	Return NULL upon failure
+*/
 char	*ft_strtrim(char const *str, char const *set)
 {
 	char	*output;

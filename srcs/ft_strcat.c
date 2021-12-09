@@ -6,23 +6,27 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:26:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 01:03:56 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:47:24 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
+/*
+	Append the content of the given string `src`
+	to the end of the given string `dst`
+*/
 char	*ft_strcat(char *dst, char const *src)
 {
-	char	*p;
+	char	*ptr;
 
 	if (!dst || !src)
 		return (NULL);
-	p = dst;
-	while (*p)
-		++p;
+	ptr = dst;
+	while (*ptr)
+		++ptr;
 	while (*src)
-		*p++ = *src++;
-	*p = 0;
+		*ptr++ = *src++;
+	*ptr = 0;
 	return (dst);
 }

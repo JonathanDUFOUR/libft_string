@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:27:46 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 01:01:52 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:34:15 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ static char	**populate(char **output, char *ptr, char const *s, char c)
 	return (output);
 }
 
+/*
+	Split the given string `str` whenever char `c` is encountered
+	Return an array of strings resulting of the spliting
+*/
 char	**ft_split(char const *str, char c)
 {
 	char	**output;

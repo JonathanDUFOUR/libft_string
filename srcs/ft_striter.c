@@ -6,13 +6,15 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 03:09:10 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 01:08:14 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:40:45 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *str, void (*f)(char *))
+/*
+	Apply the function `fct` on each character of the given string `str`
+*/
+void	ft_striter(char *str, void (*fct)(char *))
 {
-	if (str && f)
-		while (*str)
-			f(str++);
+	while (*str)
+		fct(str++);
 }

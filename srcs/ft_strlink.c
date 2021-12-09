@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 21:39:40 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/01 17:57:14 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:04:57 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ static void	ft_bzero(void *addr, size_t n)
 		*ptr = 0;
 }
 
+/*
+	Allocate a new empty string, and successively append the contents
+	of given strings `strs` to the end of it, separating each one
+	with the content of the content of the given string `link`
+	Return the address of the new string
+	Return NULL upon failure
+*/
 char	*ft_strlink(char const **strs, char const *link)
 {
 	char		*output;
@@ -51,7 +58,7 @@ char	*ft_strlink(char const **strs, char const *link)
 	size_t		l_len;
 
 	if (!*strs || !*(strs + 1))
-		return ((char *)*strs);
+		return (ft_strdup(*strs));
 	l_len = ft_strlen(link);
 	o_len = ft_strlen(*ptr++);
 	while (*ptr)

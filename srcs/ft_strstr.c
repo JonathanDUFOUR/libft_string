@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:28:03 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/01 17:59:19 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:40:31 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ static int	ft_memcmp(void const *addr0, void const *addr1, size_t n)
 	return (0);
 }
 
+/*
+	Return the address of the first matched substring `tf`
+	in the given string `str` 
+	Return NULL if `tf` is not found
+*/
 char	*ft_strstr(char const *str, char const *tf)
 {
 	size_t const	tf_l = ft_strlen(tf);

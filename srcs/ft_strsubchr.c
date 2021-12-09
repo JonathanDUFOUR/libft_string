@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strsubchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 20:47:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/09 21:50:49 by jodufour         ###   ########.fr       */
+/*   Created: 2021/12/09 20:05:19 by jodufour          #+#    #+#             */
+/*   Updated: 2021/12/09 21:42:26 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 #include "ft_string.h"
 
 /*
-	Allocate a new string and copy the `len` first characters
-	from the given string `str`,
-	beginning at position `start`
+	Allocate a new string and copy the content of the given string `str` to it
+	except the first occurence of the character `c`
 	Return the address of the new string
 	Return NULL upon failure
 */
-char	*ft_substr(char const *str, size_t start, size_t len)
+char	*ft_strsubchr(char const *str, char const c)
 {
 	char	*output;
-	size_t	s_len;
+	char	*ptr;
 
-	if (start >= ft_strlen(str))
-		return (ft_strdup(""));
-	s_len = ft_strlen(str);
-	if (len > (s_len - start))
-		len = s_len - start;
-	output = malloc((len + 1) * sizeof(char));
+	ptr = ft_strchr(str, c);
+	if (!ptr || !*ptr)
+		return (ft_strdup(str));
+	output = malloc((ptr - str + ft_strlen(ptr + 1) + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
-	*(output + len) = 0;
-	while (len--)
-		*(output + len) = *(str + start + len);
+	ptr = output;
+	while (*str && *str != c)
+		*ptr++ = *str++;
+	++str;
+	while (*str)
+		*ptr++ = *str++;
+	*ptr = 0;
 	return (output);
 }

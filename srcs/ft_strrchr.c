@@ -6,12 +6,17 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 21:55:54 by jdufour           #+#    #+#             */
-/*   Updated: 2021/10/05 02:31:38 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:44:51 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
+/*
+	Return the address of the last occurence of the character `c`
+	in the given string `str`
+	Return NULL if `c` is not found
+*/
 char	*ft_strrchr(char const *str, int const c)
 {
 	char const	*ptr = str;

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 21:02:55 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/01 17:53:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/09 21:51:58 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int		ft_strncmp(char const *s0, char const *s1, size_t n)
 int		ft_strnequ(char const *s0, char const *s1, size_t n)
 		__attribute__((nonnull (1, 2)));
 
-void	ft_striter(char *str, void (*f)(char *))
+void	ft_striter(char *str, void (*fct)(char *))
 		__attribute__((nonnull));
-void	ft_striteri(char *str, void (*f)(t_uint, char *))
+void	ft_striteri(char *str, void (*fct)(t_uint, char *))
 		__attribute__((nonnull));
 
 bool	ft_strcaseequ(char const *s0, char const *s1)
@@ -42,7 +42,7 @@ bool	ft_strncaseequ(char const *s0, char const *s1, size_t n)
 
 char	*ft_strcat(char *dst, const char *src)
 		__attribute__((nonnull));
-char	*ft_strchr(const char *str, int const c)
+char	*ft_strchr(const char *str, char const c)
 		__attribute__((nonnull (1)));
 char	*ft_strcpy(char *dst, const char *src)
 		__attribute__((nonnull));
@@ -52,9 +52,9 @@ char	*ft_strjoin(char const *s0, char const *s1)
 		__attribute__((nonnull));
 char	*ft_strlink(char const **strs, char const *link)
 		__attribute__((nonnull));
-char	*ft_strmap(char const *str, char (*f)(char))
+char	*ft_strmap(char const *str, char (*fct)(char))
 		__attribute__((nonnull));
-char	*ft_strmapi(char const *str, char (*f)(t_uint, char))
+char	*ft_strmapi(char const *str, char (*fct)(t_uint, char))
 		__attribute__((nonnull));
 char	*ft_strncat(char *dst, const char *src, size_t n)
 		__attribute__((nonnull (1, 2)));
@@ -70,6 +70,8 @@ char	*ft_strrev(char *str)
 		__attribute__((nonnull));
 char	*ft_strstr(char const *str, char const *tf)
 		__attribute__((nonnull));
+char	*ft_strsubchr(char const *str, char const c)
+		__attribute__((nonnull (1)));
 char	*ft_strtrim(char const *str, char const *set)
 		__attribute__((nonnull));
 char	*ft_substr(char const *str, size_t start, size_t len)
