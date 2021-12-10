@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/12/01 17:41:21 by jodufour         ###   ########.fr        #
+#    Updated: 2021/12/10 14:00:52 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRC		=	\
 			ft_strrchr.c		\
 			ft_strrev.c			\
 			ft_strstr.c			\
+			ft_strsubchr.c		\
 			ft_strtrim.c		\
 			ft_substr.c
 
