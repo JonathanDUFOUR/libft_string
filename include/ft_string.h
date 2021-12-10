@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 21:02:55 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/09 21:51:58 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:18:23 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ char	*ft_strrev(char *str)
 char	*ft_strstr(char const *str, char const *tf)
 		__attribute__((nonnull));
 char	*ft_strsubchr(char const *str, char const c)
+		__attribute__((nonnull (1)));
+char	*ft_strsubidx(char const *str, size_t const idx)
 		__attribute__((nonnull (1)));
 char	*ft_strtrim(char const *str, char const *set)
 		__attribute__((nonnull));

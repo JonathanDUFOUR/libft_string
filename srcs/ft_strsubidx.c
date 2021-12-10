@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:00:20 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/10 15:12:46 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:34:09 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strsubidx(char const *str, size_t const idx)
 	if (!output)
 		return (NULL);
 	ptr = output;
-	while (*str && ptr - output != idx)
+	while (*str && (size_t)(ptr - output) != idx)
 		*ptr++ = *str++;
 	++str;
 	while (*str)
