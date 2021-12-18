@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:27:46 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/17 22:28:04 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/18 18:06:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 static char	**populate(char **output, char *ptr, char const *str, char const c)
 {
-	size_t	size;
+	size_t	i;
 
-	size = 0;
+	i = 0;
 	while (*str)
 	{
-		output[size++] = ptr;
+		output[i++] = ptr;
 		while (*str && *str != c)
 			*ptr++ = *str++;
 		*ptr++ = 0;
