@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/21 06:26:57 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 20:48:50 by jodufour         ###   ########.fr       */
+/*   Created: 2020/03/21 18:55:17 by jdufour           #+#    #+#             */
+/*   Updated: 2021/12/19 22:51:54 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+#include <stdint.h>
 #include <stdlib.h>
-#include "ft_string.h"
 
 /*
-	Allocate a new string 
-	Copy the content of the given string `str` to it
-	Return the address of the new string
-	Return NULL upon failure
+	Return the address of the first occurence of the given byte `c`
+	in the given area `addr`
+	Return NULL if `c` is not found
 */
-char	*ft_strdup(char const *str)
+void	*ft_memchr(void const *addr, uint8_t const c, size_t size)
 {
-	char	*output;
-	size_t	size;
-
-	size = ft_strlen(str) + 1;
-	output = malloc(size * sizeof(char));
-	if (!output)
-		return (NULL);
-	ft_memcpy(output, str, size);
-	return (output);
+	while (size && (*(uint8_t *)addr) != c)
+	{
+		--size;
+		addr += sizeof(uint8_t);
+	}
+	if (size && (*(uint8_t *)addr) == c)
+		return ((void *)addr);
+	return (NULL);
 }

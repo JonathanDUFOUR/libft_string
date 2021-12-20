@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 16:36:45 by jonathan          #+#    #+#             */
-/*   Updated: 2021/12/20 20:49:43 by jodufour         ###   ########.fr       */
+/*   Created: 2020/04/30 05:44:00 by jdufour           #+#    #+#             */
+/*   Updated: 2021/12/20 20:49:57 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 #include "ft_string.h"
 
 /*
-	Allocate a new string, copy the content of the given string `s0` to it
-	and appends the content of the given string `s1` to it
-	Return the address of the new string
+	Allocate `n` elements of `size` bytes each
+	Set all allocated bytes to null bytes
+	Return the address of the allocated area
 	Return NULL upon failure
 */
-char	*ft_strjoin(char const *s0, char const *s1)
+void	*ft_calloc(size_t n, size_t size)
 {
-	char			*output;
-	size_t const	s0_len = ft_strlen(s0);
-	size_t const	s1_len = ft_strlen(s1);
+	void	*output;
 
-	output = malloc((s0_len + s1_len + 1) * sizeof(char));
-	if (!output)
-		return (NULL);
-	ft_memcpy(output, s0, s0_len);
-	ft_memcpy(output + s0_len, s1, s1_len);
-	output[s0_len + s1_len] = 0;
+	output = malloc(size * n);
+	if (n && size && output)
+		ft_bzero(output, size * n);
 	return (output);
 }

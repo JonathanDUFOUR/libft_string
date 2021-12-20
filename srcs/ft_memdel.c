@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/21 06:26:57 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 20:48:50 by jodufour         ###   ########.fr       */
+/*   Created: 2020/03/22 19:09:16 by jdufour           #+#    #+#             */
+/*   Updated: 2021/12/19 21:02:42 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_string.h"
 
 /*
-	Allocate a new string 
-	Copy the content of the given string `str` to it
-	Return the address of the new string
-	Return NULL upon failure
+	Release the resources of the pointer pointed by the given pointer `addr`
+	and set it to NULL
 */
-char	*ft_strdup(char const *str)
+void	ft_memdel(void *addr)
 {
-	char	*output;
-	size_t	size;
-
-	size = ft_strlen(str) + 1;
-	output = malloc(size * sizeof(char));
-	if (!output)
-		return (NULL);
-	ft_memcpy(output, str, size);
-	return (output);
+	if (addr)
+	{
+		free(*(void **)addr);
+		*(void **)addr = NULL;
+	}
 }

@@ -6,23 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 23:11:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/09 21:48:33 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/20 20:51:14 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
 #include <stdlib.h>
 #include "ft_string.h"
-
-static void	*ft_memcpy(void *dst, void const *src, size_t n)
-{
-	if (!dst || !src)
-		return (NULL);
-	else if (dst != src)
-		while (n--)
-			((uint8_t *)dst)[n] = ((uint8_t *)src)[n];
-	return (dst);
-}
 
 /*
 	Allocate a new string and copy the content of the given string `str` to it

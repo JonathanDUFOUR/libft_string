@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 16:36:45 by jonathan          #+#    #+#             */
-/*   Updated: 2021/12/20 20:49:43 by jodufour         ###   ########.fr       */
+/*   Created: 2021/12/20 19:19:35 by jodufour          #+#    #+#             */
+/*   Updated: 2021/12/20 20:47:43 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 #include "ft_string.h"
 
 /*
-	Allocate a new string, copy the content of the given string `s0` to it
-	and appends the content of the given string `s1` to it
+	Allocate a new string
+	Copy the content of the given string `str` to it
+	During the copy, if the given character `c` is encountered,
+	it is not copied and the copy ends here
 	Return the address of the new string
 	Return NULL upon failure
 */
-char	*ft_strjoin(char const *s0, char const *s1)
+char	*ft_strcdup(char const *str, char const c)
 {
-	char			*output;
-	size_t const	s0_len = ft_strlen(s0);
-	size_t const	s1_len = ft_strlen(s1);
+	char		*output;
+	char		*ptr;
+	size_t		len;
 
-	output = malloc((s0_len + s1_len + 1) * sizeof(char));
+	ptr = ft_strchr(str, c);
+	if (!ptr)
+		ptr = ft_strchr(str, 0);
+	len = ptr - str;
+	output = malloc((len + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
-	ft_memcpy(output, s0, s0_len);
-	ft_memcpy(output + s0_len, s1, s1_len);
-	output[s0_len + s1_len] = 0;
+	ft_memcpy(output, str, len);
+	output[len] = 0;
 	return (output);
 }

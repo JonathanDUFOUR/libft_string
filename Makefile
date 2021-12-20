@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/12/10 15:13:23 by jodufour         ###   ########.fr        #
+#    Updated: 2021/12/20 20:43:58 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,20 @@ INC_DIR	=	include/
 #            SOURCE FILES            #
 ######################################
 SRC		=	\
+			ft_bzero.c			\
+			ft_calloc.c			\
+			ft_memccpy.c		\
+			ft_memchr.c			\
+			ft_memcmp.c			\
+			ft_memcpy.c			\
+			ft_memdel.c			\
+			ft_memmove.c		\
+			ft_memset.c			\
+			ft_memswap.c		\
 			ft_split.c			\
 			ft_strcasecmp.c		\
 			ft_strcat.c			\
+			ft_strcdup.c		\
 			ft_strchr.c			\
 			ft_strcmp.c			\
 			ft_strcpy.c			\

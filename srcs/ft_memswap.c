@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/21 06:26:57 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 20:48:50 by jodufour         ###   ########.fr       */
+/*   Created: 2020/03/21 06:28:15 by jdufour           #+#    #+#             */
+/*   Updated: 2021/12/19 22:38:52 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_string.h"
+#include <stdint.h>
 
 /*
-	Allocate a new string 
-	Copy the content of the given string `str` to it
-	Return the address of the new string
-	Return NULL upon failure
+	Swap the value of both bytes pointed by given pointers `a` and `b`
 */
-char	*ft_strdup(char const *str)
+void	ft_memswap(uint8_t *a, uint8_t *b)
 {
-	char	*output;
-	size_t	size;
-
-	size = ft_strlen(str) + 1;
-	output = malloc(size * sizeof(char));
-	if (!output)
-		return (NULL);
-	ft_memcpy(output, str, size);
-	return (output);
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
 }
