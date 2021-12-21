@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:36:45 by jonathan          #+#    #+#             */
-/*   Updated: 2021/12/20 22:13:22 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/21 02:42:51 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ char	*ft_strjoin(char const *str0, char const *str1)
 	char			*output;
 	size_t const	len0 = ft_strlen(str0);
 	size_t const	len1 = ft_strlen(str1);
+	size_t const	len = len0 + len1;
 
-	output = malloc((len0 + len1 + 1) * sizeof(char));
+	output = malloc((len + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
-	output[len0 + len1] = 0;
-	return (ft_memcpy(ft_memcpy(output, str0, len0) + len0, str1, len1));
+	output[len] = 0;
+	ft_memcpy(output + len0, str1, len1);
+	return (ft_memcpy(output, str0, len0));
 }

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:27:23 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/20 21:45:18 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/21 02:43:50 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ char	*ft_strcjoin(char const *str0, char const *str1, char const c)
 	output = malloc((len + 1) * sizeof(char));
 	if (!output)
 		return (NULL);
-	ft_memcpy(output, str0, ptr0 - str0);
-	ft_memcpy(output + (size_t)(ptr0 - str0), str1, ptr1 - str1);
 	output[len] = 0;
-	return (output);
+	ft_memcpy(output + (size_t)(ptr0 - str0), str1, ptr1 - str1);
+	return (ft_memcpy(output, str0, ptr0 - str0));
 }
