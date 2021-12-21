@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 07:07:46 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 20:50:07 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/20 22:06:31 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	__update(void **const dst, void const **const src,
 	Copy the content of the area pointed by the given pointer `src`
 	to the area pointed by the given pointer `dst`
 */
-void	*ft_memmove(void *dst, const void *src, size_t size)
+void	*ft_memmove(void *dst, void const *src, size_t size)
 {
 	if (src >= dst)
 		return (ft_memcpy(dst, src, size));

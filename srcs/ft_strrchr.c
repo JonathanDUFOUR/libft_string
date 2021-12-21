@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 21:55:54 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/09 21:44:51 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/20 22:19:04 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 	in the given string `str`
 	Return NULL if `c` is not found
 */
-char	*ft_strrchr(char const *str, int const c)
+char	*ft_strrchr(char const *str, char const c)
 {
-	char const	*ptr = str;
+	register char const	*ptr = str;
 
 	ptr += ft_strlen(str);
-	while (ptr >= str && *ptr != (char const)c)
+	while (ptr >= str && *ptr != c)
 		--ptr;
-	if (*ptr == (char const)c)
+	if (*ptr == c)
 		return ((char *)ptr);
 	return (NULL);
 }

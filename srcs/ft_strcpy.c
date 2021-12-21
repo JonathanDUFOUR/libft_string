@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:26:45 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/09 21:18:04 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/20 21:57:50 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 	to the given string `dst`
 	Return the address of the given string `dst`
 */
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *const dst, char const *src)
 {
-	char	*ptr;
+	register char	*ptr;
 
 	ptr = dst;
 	while (*src)

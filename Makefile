@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/12/20 20:43:58 by jodufour         ###   ########.fr        #
+#    Updated: 2021/12/20 21:27:13 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRC		=	\
 			ft_strcat.c			\
 			ft_strcdup.c		\
 			ft_strchr.c			\
+			ft_strcjoin.c		\
 			ft_strcmp.c			\
 			ft_strcpy.c			\
 			ft_strdup.c			\

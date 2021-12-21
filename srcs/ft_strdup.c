@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:26:57 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 20:48:50 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/20 22:12:17 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ char	*ft_strdup(char const *str)
 	output = malloc(size * sizeof(char));
 	if (!output)
 		return (NULL);
-	ft_memcpy(output, str, size);
-	return (output);
+	return (ft_memcpy(output, str, size));
 }

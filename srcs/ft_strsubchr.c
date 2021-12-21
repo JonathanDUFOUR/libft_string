@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:05:19 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/10 15:05:34 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/21 01:24:11 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,16 @@
 */
 char	*ft_strsubchr(char const *str, char const c)
 {
-	char	*output;
-	char	*ptr;
+	char			*output;
+	char *const		ptr = ft_strchr(str, c);
+	size_t const	size = ft_strlen(str);
+	size_t			i;
 
-	if (!c || !ft_strchr(str, c))
+	if (!c || !ptr || !size)
 		return (ft_strdup(str));
-	output = malloc(ft_strlen(str) * sizeof(char));
+	output = malloc(size * sizeof(char));
 	if (!output)
 		return (NULL);
-	ptr = output;
-	while (*str && *str != c)
-		*ptr++ = *str++;
-	++str;
-	while (*str)
-		*ptr++ = *str++;
-	*ptr = 0;
-	return (output);
+	i = ptr - str;
+	return (ft_memcpy(ft_memcpy(output, str, i) + i, str + i + 1, size - i));
 }
