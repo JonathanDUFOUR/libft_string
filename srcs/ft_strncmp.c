@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 22:44:18 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 22:16:50 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 09:01:48 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	ft_strncmp(char const *str0, char const *str1, size_t n)
 		++str1;
 		--n;
 	}
-	return (*str0 - *str1);
+	return ((*str0 - *str1) * !!n);
 }

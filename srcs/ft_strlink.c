@@ -6,12 +6,32 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 21:39:40 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 20:50:35 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 07:29:20 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_string.h"
+
+static char	*__allocate(char const **strs, char const *link)
+{
+	size_t	len;
+
+	len = ft_strlen(*strs++);
+	while (*strs)
+		len += ft_strlen(*strs++) + ft_strlen(link);
+	return (malloc((len + 1) * sizeof(char)));
+}
+
+static void	__fill(char const **strs, char const *link, char *output)
+{
+	ft_strcpy(output, *strs++);
+	while (*strs)
+	{
+		ft_strcat(output, link);
+		ft_strcat(output, *strs++);
+	}
+}
 
 /*
 	Allocate a new empty string, and successively append the contents
@@ -22,26 +42,13 @@
 */
 char	*ft_strlink(char const **strs, char const *link)
 {
-	char		*output;
-	char const	**ptr = strs;
-	size_t		o_len;
-	size_t		l_len;
+	char	*output;
 
-	if (!*strs || !*(strs + 1))
-		return (ft_strdup(*strs));
-	l_len = ft_strlen(link);
-	o_len = ft_strlen(*ptr++);
-	while (*ptr)
-		o_len += ft_strlen(*ptr++) + l_len;
-	output = malloc(o_len + 1);
+	if (!*strs)
+		return (NULL);
+	output = __allocate(strs, link);
 	if (!output)
 		return (NULL);
-	ft_bzero(output, o_len + 1);
-	while (*strs)
-	{
-		output = ft_strcat(output, *strs++);
-		output = ft_strcat(output, link);
-	}
-	*(output + o_len) = 0;
+	__fill(strs, link, output);
 	return (output);
 }

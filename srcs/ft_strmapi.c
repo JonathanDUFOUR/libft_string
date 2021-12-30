@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 19:29:08 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/09 21:04:12 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 08:16:45 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	Return the address of the new string
 	Return NULL upon failure
 */
-char	*ft_strmapi(char const *str, char (*fct)(t_uint, char))
+char	*ft_strmapi(char const *str, char (*fct)(t_uint const i, char const c))
 {
 	char	*map;
 	char	*ptr;

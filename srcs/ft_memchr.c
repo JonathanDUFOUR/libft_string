@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 18:55:17 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/19 22:51:54 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/27 05:23:23 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 
 /*
 	Return the address of the first occurence of the given byte `c`
-	in the given area `addr`
+	in the `n` first bytes of the given area `addr`
 	Return NULL if `c` is not found
 */
-void	*ft_memchr(void const *addr, uint8_t const c, size_t size)
+void	*ft_memchr(void const *addr, uint8_t const c, size_t n)
 {
-	while (size && (*(uint8_t *)addr) != c)
+	while (n && (*(uint8_t *)addr) != c)
 	{
-		--size;
+		--n;
 		addr += sizeof(uint8_t);
 	}
-	if (size && (*(uint8_t *)addr) == c)
+	if (n && (*(uint8_t *)addr) == c)
 		return ((void *)addr);
 	return (NULL);
 }

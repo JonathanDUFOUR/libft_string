@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 20:47:11 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/21 01:40:11 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 16:36:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 */
 char	*ft_substr(char const *str, size_t start, size_t len)
 {
-	char			*output;
+	char	*output;
 
 	output = malloc((len + 1) * sizeof(char));
 	if (!output)

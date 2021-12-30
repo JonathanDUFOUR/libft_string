@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:00:20 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/21 02:47:33 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 15:39:13 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strsubidx(char const *str, size_t const idx)
 	char			*output;
 	size_t const	size = ft_strlen(str);
 
-	if (!size || idx >= size - 1)
+	if (!size || idx >= size)
 		return (ft_strdup(str));
 	output = malloc(size * sizeof(char));
 	if (!output)

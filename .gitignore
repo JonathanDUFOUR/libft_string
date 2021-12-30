@@ -1,8 +1,6 @@
-**
-
-!srcs/
-!include/
-!*.c
-!*.h
-!Makefile
-!.gitignore
+**.a
+**.o
+**.d
+**.so
+tester/
+.vscode/

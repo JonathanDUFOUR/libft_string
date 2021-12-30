@@ -6,19 +6,19 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 21:02:55 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/21 01:41:48 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 10:14:52 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STRING_H
 # define FT_STRING_H
 
-# include <string.h>
+# include <stddef.h>
 # include <stdint.h>
 # include <stdbool.h>
 # include "type/t_int.h"
 
-int		ft_memcmp(void const *addr0, void const *addr1, size_t size)
+int		ft_memcmp(void const *addr0, void const *addr1, size_t n)
 		__attribute__((nonnull (1, 2)));
 int		ft_strcasecmp(char const *str0, char const *str1)
 		__attribute__((nonnull));
@@ -31,27 +31,27 @@ int		ft_strncmp(char const *str0, char const *str1, size_t n)
 int		ft_strnequ(char const *str0, char const *str1, size_t n)
 		__attribute__((nonnull (1, 2)));
 
-void	ft_bzero(void *addr, size_t size)
+void	ft_bzero(void *addr, size_t n)
 		__attribute__((nonnull (1)));
 void	ft_memdel(void *addr)
 		__attribute__((nonnull));
-void	ft_memswap(void *a, void *b)
+void	ft_memswap(uint8_t *const a, uint8_t *const b)
 		__attribute__((nonnull));
-void	ft_striter(char *str, void (*fct)(char *))
+void	ft_striter(char *str, void (*fct)(char *const c))
 		__attribute__((nonnull));
-void	ft_striteri(char *str, void (*fct)(t_uint, char *))
+void	ft_striteri(char *str, void (*fct)(t_uint const i, char *const c))
 		__attribute__((nonnull));
 
 void	*ft_calloc(size_t n, size_t size);
-void	*ft_memccpy(void *dst, void const *src, uint8_t const c, size_t size)
+void	*ft_memccpy(void *dst, void const *src, uint8_t const c, size_t n)
 		__attribute__((nonnull (1, 2)));
-void	*ft_memchr(const void *addr, uint8_t const c, size_t size)
+void	*ft_memchr(const void *addr, uint8_t const c, size_t n)
 		__attribute__((nonnull (1)));
-void	*ft_memcpy(void *dst, void const *src, size_t size)
+void	*ft_memcpy(void *dst, void const *src, size_t n)
 		__attribute__((nonnull (1, 2)));
-void	*ft_memmove(void *dst, void const *src, size_t size)
+void	*ft_memmove(void *dst, void const *src, size_t n)
 		__attribute__((nonnull (1, 2)));
-void	*ft_memset(void *addr, uint8_t const c, size_t size)
+void	*ft_memset(void *addr, uint8_t const c, size_t n)
 		__attribute__((nonnull (1)));
 
 bool	ft_strcaseequ(char const *str0, char const *str1)
@@ -77,13 +77,13 @@ char	*ft_strjoin(char const *str0, char const *str1)
 		__attribute__((nonnull));
 char	*ft_strlink(char const **strs, char const *link)
 		__attribute__((nonnull));
-char	*ft_strmap(char const *str, char (*fct)(char))
+char	*ft_strmap(char const *str, char (*fct)(char const c))
 		__attribute__((nonnull));
-char	*ft_strmapi(char const *str, char (*fct)(t_uint, char))
+char	*ft_strmapi(char const *str, char (*fct)(t_uint const i, char const c))
 		__attribute__((nonnull));
-char	*ft_strncat(char *const dst, char const *const src, size_t const n)
+char	*ft_strncat(char *const dst, char const *src, size_t n)
 		__attribute__((nonnull (1, 2)));
-char	*ft_strncpy(char *const dst, char const *const src, size_t const n)
+char	*ft_strncpy(char *const dst, char const *src, size_t n)
 		__attribute__((nonnull (1, 2)));
 char	*ft_strndup(char const *str, size_t n)
 		__attribute__((nonnull (1)));

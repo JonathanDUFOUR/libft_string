@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 02:38:36 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/20 22:02:59 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/30 08:59:34 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static char	__toupper(char const c)
 */
 int	ft_strncasecmp(char const *str0, char const *str1, size_t n)
 {
-	while (n && str0 && str1 && *str0 && __toupper(*str0) == __toupper(*str1))
+	while (n && *str0 && __toupper(*str0) == __toupper(*str1))
 	{
 		++str0;
 		++str1;
 		--n;
 	}
-	return (*(t_hhuint *)str0 - *(t_hhuint *)str1);
+	return ((*(t_hhuint *)str0 - *(t_hhuint *)str1) * !!n);
 }

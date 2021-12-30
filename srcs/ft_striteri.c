@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/26 03:09:10 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/09 20:43:20 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/27 14:43:23 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 /*
 	Apply the function `fct` on each character of the given string `str`
 */
-void	ft_striteri(char *str, void (*fct)(t_uint, char *))
+void	ft_striteri(char *str, void (*fct)(t_uint const i, char *const c))
 {
-	register char const	*ptr = str;
+	register char	*ptr;
 
-	while (*str)
+	ptr = str;
+	while (*ptr)
 	{
-		fct(str - ptr, str);
-		++str;
+		fct(ptr - str, ptr);
+		++ptr;
 	}
 }
