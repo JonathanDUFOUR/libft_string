@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/22 22:44:18 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/30 09:01:48 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:07:41 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "type/t_int.h"
+#include "t_int.h"
 
 /*
 	Compare the `n` first characters of the content of the given string `str0`

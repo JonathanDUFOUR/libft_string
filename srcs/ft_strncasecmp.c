@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 02:38:36 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/30 16:59:26 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:07:51 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "type/t_int.h"
+#include "t_int.h"
 
 static char	__toupper(char const c)
 {

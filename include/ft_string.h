@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 21:02:55 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/30 10:14:52 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:40:36 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stddef.h>
 # include <stdint.h>
 # include <stdbool.h>
-# include "type/t_int.h"
+# include "t_int.h"
 
 int		ft_memcmp(void const *addr0, void const *addr1, size_t n)
 		__attribute__((nonnull (1, 2)));
