@@ -6,14 +6,14 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2021/12/20 21:27:13 by jodufour         ###   ########.fr        #
+#    Updated: 2022/05/19 02:56:13 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #######################################
 #               COMANDS               #
 #######################################
-CC		=	clang -c -o
+CC		=	clang
 LINK	=	ar rcs
 MKDIR	=	mkdir -p
 RM		=	rm -rf
@@ -89,7 +89,8 @@ DEP		=	${OBJ:.o=.d}
 #######################################
 #                FLAGS                #
 #######################################
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-c
+CFLAGS	+=	-Wall -Wextra -Werror
 CFLAGS	+=	-MMD -MP
 CFLAGS	+=	-I${INC_DIR}
 
@@ -102,22 +103,24 @@ LDFLAGS	=
 #######################################
 #                RULES                #
 #######################################
-${NAME_A}:	${OBJ}
-	${LINK} $@ ${LDFLAGS} $^
+.PHONY: all clean fclean re fre
 
-${NAME_SO}:	CFLAGS	+= -fPIC
-${NAME_SO}:	LDFLAGS += -shared
-${NAME_SO}:	LINK = clang -o
-${NAME_SO}:	${OBJ}
-	${LINK} $@ ${LDFLAGS} $^
+${NAME_A}: ${OBJ}
+	${LINK} $@ $^ ${LDFLAGS}
 
-all:	${NAME_A} ${NAME_SO}
+${NAME_SO}: CFLAGS	+= -fPIC
+${NAME_SO}: LDFLAGS += -shared
+${NAME_SO}: LINK = clang
+${NAME_SO}: ${OBJ}
+	${LINK} $^ ${LDFLAGS} ${OUTPUT_OPTION}
+
+all: ${NAME_A} ${NAME_SO}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o:	${SRC_DIR}%.c
+${OBJ_DIR}%.o: ${SRC_DIR}%.c
 	@${MKDIR} ${@D}
-	${CC} $@ ${CFLAGS} $<
+	${CC} $< ${CFLAGS} ${OUTPUT_OPTION}
 
 clean:
 	${RM} ${OBJ_DIR}
@@ -125,27 +128,9 @@ clean:
 fclean:
 	${RM} ${OBJ_DIR} ${NAME_A} ${NAME_SO}
 
-re:	fclean all
+re: clean all
 
-norm:
-	@norminette ${SRC_DIR} ${INC_DIR} | grep 'Error' ; true
+fre: fclean all
 
-coffee:
-	@echo '                                              '
-	@echo '                   "   "                      '
-	@echo '                  " " " "                     '
-	@echo '                 " " " "                      '
-	@echo '         _.-==="""""""""===-._                '
-	@echo '        |=___    ~ ~ ~    ___=|=,.            '
-	@echo '        |    """======="""    |  \\           '
-	@echo '        |                     |   ||          '
-	@echo '        |                     |   ||          '
-	@echo '        |                     |   ||          '
-	@echo '        |                     |   ||          '
-	@echo '        |                     |  //           '
-	@echo '         \                   /==""            '
-	@echo '          \                 /                 '
-	@echo '           ""--._______.--""                  '
-	@echo '                                              '
-
-.PHONY: all clean fclean re norm coffee
+-include ${HOME}/Templates/mk_files/coffee.mk
+-include ${HOME}/Templates/mk_files/norm.mk
