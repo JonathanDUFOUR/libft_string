@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 00:24:57 by jodufour          #+#    #+#              #
-#    Updated: 2022/05/19 02:56:13 by jodufour         ###   ########.fr        #
+#    Updated: 2022/10/29 07:18:17 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,9 @@ NAME_SO	=	${NAME}.so
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR	=	srcs/
-OBJ_DIR	=	objs/
-INC_DIR	=	include/
+SRC_DIR	=	srcs
+OBJ_DIR	=	objs
+INC_DIR	=	include
 
 ######################################
 #            SOURCE FILES            #
@@ -82,7 +82,7 @@ SRC		=	\
 #            OBJECT FILES            #
 ######################################
 OBJ		=	${SRC:.c=.o}
-OBJ		:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+OBJ		:=	${addprefix ${OBJ_DIR}/, ${OBJ}}
 
 DEP		=	${OBJ:.o=.d}
 
@@ -118,7 +118,7 @@ all: ${NAME_A} ${NAME_SO}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o: ${SRC_DIR}%.c
+${OBJ_DIR}/%.o: ${SRC_DIR}/%.c
 	@${MKDIR} ${@D}
 	${CC} $< ${CFLAGS} ${OUTPUT_OPTION}
 
