@@ -24,14 +24,14 @@ char	*ft_strsubchr(char const *str, char const c)
 	char			*output;
 	char *const		ptr = ft_strchr(str, c);
 	size_t const	size = ft_strlen(str);
-	size_t			idx;
+	size_t			offset;
 
 	if (!c || !ptr || !size)
 		return (ft_strdup(str));
 	output = malloc(size * sizeof(char));
 	if (!output)
 		return (NULL);
-	idx = ptr - str;
-	ft_memcpy(output + idx, str + idx + 1, size - idx);
-	return (ft_memcpy(output, str, idx));
+	offset = ptr - str;
+	ft_memcpy(output + offset, str + offset + 1, size - offset);
+	return (ft_memcpy(output, str, offset));
 }
