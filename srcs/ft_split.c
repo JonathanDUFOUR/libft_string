@@ -6,14 +6,18 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:27:46 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/18 18:06:49 by jodufour         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:58:27 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_string.h"
 #include <stdlib.h>
-#include <string.h>
 
-static char	**populate(char **output, char *ptr, char const *str, char const c)
+inline static char	**__populate(
+	char **output,
+	char *ptr,
+	char const *str,
+	char const *const set)
 {
 	size_t	i;
 
@@ -21,10 +25,10 @@ static char	**populate(char **output, char *ptr, char const *str, char const c)
 	while (*str)
 	{
 		output[i++] = ptr;
-		while (*str && *str != c)
+		while (*str && !ft_strchr(set, *str))
 			*ptr++ = *str++;
 		*ptr++ = 0;
-		while (*str && *str == c)
+		while (*str && ft_strchr(set, *str))
 			++str;
 	}
 	return (output);
@@ -34,24 +38,24 @@ static char	**populate(char **output, char *ptr, char const *str, char const c)
 	Split the given string `str` whenever char `c` is encountered
 	Return an array of strings resulting of the spliting
 */
-char	**ft_split(char const *str, char const c)
+char	**ft_split(char const *str, char const *const set)
 {
 	register char const	*ptr;
 	char				**output;
 	size_t				size;
 	size_t				len;
 
-	while (*str && *str == c)
+	while (*str && ft_strchr(set, *str))
 		++str;
 	ptr = str;
 	size = 0;
 	len = 0;
 	while (*ptr)
 	{
-		if (*ptr != c)
+		if (!ft_strchr(set, *ptr))
 		{
 			++len;
-			if ((ptr == str || *(ptr - 1) == c))
+			if (ptr == str || ft_strchr(set, *(ptr - 1)))
 				++size;
 		}
 		++ptr;
@@ -60,5 +64,5 @@ char	**ft_split(char const *str, char const c)
 	if (!output)
 		return (NULL);
 	output[size] = NULL;
-	return (populate(output, (char *)(output + size + 1), str, c));
+	return (__populate(output, (char *)(output + size + 1), str, set));
 }
