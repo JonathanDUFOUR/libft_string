@@ -6,14 +6,14 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/28 21:39:40 by jdufour           #+#    #+#             */
-/*   Updated: 2021/12/30 07:29:20 by jodufour         ###   ########.fr       */
+/*   Updated: 2023/03/22 04:05:28 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_string.h"
 
-static char	*__allocate(char const **strs, char const *link)
+static char	*__allocate(char const *const *strs, char const *const link)
 {
 	size_t	len;
 
@@ -23,7 +23,10 @@ static char	*__allocate(char const **strs, char const *link)
 	return (malloc((len + 1) * sizeof(char)));
 }
 
-static void	__fill(char const **strs, char const *link, char *output)
+static void	__fill(
+	char const *const *strs,
+	char const *const link,
+	char *const output)
 {
 	ft_strcpy(output, *strs++);
 	while (*strs)
@@ -40,7 +43,7 @@ static void	__fill(char const **strs, char const *link, char *output)
 	Return the address of the new string
 	Return NULL upon failure
 */
-char	*ft_strlink(char const **strs, char const *link)
+char	*ft_strlink(char const *const *const strs, char const *const link)
 {
 	char	*output;
 

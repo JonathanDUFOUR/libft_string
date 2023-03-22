@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 21:02:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/04/27 09:40:36 by jodufour         ###   ########.fr       */
+/*   Updated: 2023/03/22 04:01:34 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*ft_strdup(char const *str)
 		__attribute__((nonnull));
 char	*ft_strjoin(char const *str0, char const *str1)
 		__attribute__((nonnull));
-char	*ft_strlink(char const **strs, char const *link)
+char	*ft_strlink(char const *const *const strs, char const *const link)
 		__attribute__((nonnull));
 char	*ft_strmap(char const *str, char (*fct)(char const c))
 		__attribute__((nonnull));
